@@ -43,9 +43,14 @@ If included, will be added as a title for the comment produced.
 ## Example usage
 
 ```yml
-uses: romeovs/lcov-reporter-action@v0.2.16
-with:
-  lcov-file: ./coverage/lcov.info
+- name: Generate Code Coverage report
+  id: code-coverage
+  uses: romeovs/lcov-reporter-action@v0.3.2
+  with:
+    github-token: ${{ secrets.GITHUB_TOKEN }}
+    lcov-file: ./coverage/lcov.info
+    lcov-base: ./app/lcov.info
+    working-directory: ./app
 ```
 
 ## Acknowledgements
