@@ -16,28 +16,35 @@ Total Coverage: <b>99.39%</b>
 ## Inputs
 
 ##### `github-token` (**Optional**)
+
 Github token used for posting the comment. Defaults to `${{ github.token }}`.
 
 For alternative `github-token` values see: [Creating Personal Access Tokens](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 
 ##### `working-directory` (**Default: ""**)
+
 Path to working directory the same as [default shell property](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun)
 
 ##### `lcov-file` (**Optional**)
+
 The location of the lcov file to read the coverage report from. Defaults to
 `./coverage/lcov.info`. Path is relative to **working-directory** input
 
 ##### `lcov-base` (**Optional**)
+
 The location of the lcov file resulting from running the tests in the base
 branch. When this is set a diff of the coverage percentages is shown.
 
 ##### `filter-changed-files` (**Default: false**)
+
 If set to true, only changed files will be included in the report. Total percentage will still include all files.
 
 ##### `delete-old-comments` (**Default: false**)
+
 If set to true, old comments will be deleted before a new comment is posted
 
 ##### `title` (**Optional**)
+
 If included, will be added as a title for the comment produced.
 
 ## Example usage
@@ -51,6 +58,7 @@ If included, will be added as a title for the comment produced.
     lcov-file: ./coverage/lcov.info
     lcov-base: ./app/lcov.info
     working-directory: ./app
+    delete-old-comments: true
 ```
 
 ## Acknowledgements
