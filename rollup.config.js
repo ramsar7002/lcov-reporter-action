@@ -17,7 +17,7 @@ export default {
 		}),
 		resolve({
 			preferBuiltins: true,
-			mainFields: [ "main" ],
+			mainFields: ["main"],
 		}),
 		commonjs(),
 		json(),
