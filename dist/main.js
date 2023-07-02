@@ -23139,9 +23139,9 @@ function diff(lcov, before, options) {
 	}
 
 	const pbefore = percentage(before)
-	process.env["MASTER_COVERAGE_PRECENTAGE"] = Math.random()
+	process.env["MASTER_COVERAGE_PRECENTAGE"] = pbefore
 	const pafter = percentage(lcov)
-	process.env["REF_COVERAGE_PRECENTAGE"] = Math.random()
+	process.env["REF_COVERAGE_PRECENTAGE"] = pafter
 	const pdiff = pafter - pbefore
 	const plus = pdiff > 0 ? "+" : ""
 	const arrow = pdiff === 0 ? "" : pdiff < 0 ? "▾" : "▴"
